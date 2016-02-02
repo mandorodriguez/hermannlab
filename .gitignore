@@ -4,6 +4,8 @@
 [#]*[#]
 .\#*
 
+mouse_and_human.txt
+
 # build generated files #
 #########################
 *.log
