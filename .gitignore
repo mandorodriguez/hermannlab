@@ -5,6 +5,9 @@
 .\#*
 
 mouse_and_human.txt
+mouse_exclusive.txt
+human_exclusive.txt
+data/*
 
 # build generated files #
 #########################

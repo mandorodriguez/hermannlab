@@ -1,0 +1,46 @@
+<tool id="mouse_to_human" name="Mouse to Human Table" version="0.1">
+    <description>Combines a table of Mouse and Human samples via a phenotype association</description>
+    <command interpreter="python">
+        mouse_to_human.py -t ${dictionary} -u ${human_table} -m ${mouse_table}
+    </command>
+    <inputs>
+        <param name="dictionary" type="data" optional="false" format="text" label="Dictionary file" help="The file with the human to mouse gene association.">
+          <validator type="dataset_ok_validator" />
+        </param>
+        <param name="human_table" type="data" optional="false" format="text" label="Human Table" help="The file with the human sample output">
+          <validator type="dataset_ok_validator" />
+        </param>
+        <param name="mouse_table" type="data" optional="false" format="text" label="Mouse Table" help="The file with the mouse sample output">
+          <validator type="dataset_ok_validator" />
+        </param>
+    </inputs>
+    <outputs>
+        <data format="tabular" label="Mouse and Human" name="mouse_and_human" from_work_dir="mouse_and_human.txt" />
+        <data format="tabular" label="Mouse exclusive" name="human_exclusive" from_work_dir="mouse_exclusive.txt" />
+        <data format="tabular" label="Human exclusive" name="mouse_exclusive" from_work_dir="human_exclusive.txt" />
+    </outputs>
+    <tests>
+    </tests>
+    <help>
+
+
+.. class:: infomark
+
+Takes in three files. One with a phenotype association of mouse to human where the first
+column is the human gene id, and the fourth is the mouse gene id. And two sample table files, one
+for mouse and one for human. It will output three files: a table with acombination of all data for genes present
+in both lab sample files, a table of genes only in the mouse and a table only in the human.
+
+
+
+------
+
+.. class:: infomark
+
+**Tool Author**
+
+Mando Rodriguez
+    </help>
+</tool>
+
+
