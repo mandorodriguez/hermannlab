@@ -94,13 +94,10 @@ def __main__():
         except KeyError:
             human_exclusive.append([human_id]+hiseq_human.data[human_id])
             print "No mouse data for %s and human id %s" % (mouse_id,human_id)
+            continue
 
 
         hrow = hiseq_human.data[human_id] # should never happen be missing
-
-
-        if len(hrow) == 0 or len(mrow) == 0:
-            continue
         
         new_row = [human_id, mouse_id] + hrow + mrow
         
@@ -110,9 +107,11 @@ def __main__():
     #---------------------------------------------------------------------------
     for mouse_id in hiseq_mouse.data.keys():
         try:
-            mouse_to_human[mouse_id]
+            hiseq_mouse.data[mouse_to_human[mouse_id]]
         except KeyError:
             mouse_exclusive.append([mouse_id]+hiseq_mouse.data[mouse_id])
+            print "No human data mouse id %s" % mouse_id
+
 
 
     #--- done getting stuff ----------------------------------------------------
