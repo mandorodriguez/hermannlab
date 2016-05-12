@@ -1,0 +1,36 @@
+<tool id="ensid_gene_append" name="EnsID Gene Name append" version="1.0">
+    <description>Appends the Gene name to a gene table with the matching EnsID</description>
+    <command interpreter="python">
+        append_gene_name.py -t ${ensid_to_gene} -g ${gene_expression_file}
+    </command>
+    <inputs>
+        <param name="ensid_to_gene" type="data" optional="false" format="text" label="EnsID to Gene Name Table" help="The file that contains the EnsID is one column and the matching Gene Name in the next.">
+        </param>
+
+        <param name="gene_expression_file" type="data" optional="false" format="text" label="Gene Expression table with EnsGeneIDs" help="The tabular file with the Gene Expression values.">
+        </param>
+    </inputs>
+    <outputs>
+        <data format="tabular" label="EnsGeneID table with Gene Names." name="" from_work_dir="table.txt" />
+    </outputs>
+    <tests>
+    </tests>
+    <help>
+
+
+.. class:: infomark
+
+Takes in a file with gene expression data and a file that has a mapping of EnsGene IDs to gene names and adds the real gene name to the row with the matching EnsID.
+
+
+------
+
+.. class:: infomark
+
+**Tool Author**
+
+Mando Rodriguez
+    </help>
+</tool>
+
+
