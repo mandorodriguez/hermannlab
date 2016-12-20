@@ -1,4 +1,4 @@
-<tool id="ensid_gene_append" name="EnsID Gene Name append" version="1.0">
+<tool id="ensid_gene_append" name="EnsID Gene Name append" version="1.0.1">
     <description>Appends the Gene name to a gene table with the matching EnsID</description>
     <command interpreter="python">
         append_gene_name.py -t ${ensid_to_gene} -e ${gene_expression_file}
