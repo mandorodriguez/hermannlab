@@ -1,16 +1,16 @@
-<tool id="mouse_to_human" name="Mouse to Human Table" version="0.1">
+<tool id="mouse_to_human" name="Mouse to Human Table" version="1.0">
     <description>Combines a table of Mouse and Human samples via a phenotype association</description>
     <command interpreter="python">
         mouse_to_human.py -t ${dictionary} -u ${human_table} -m ${mouse_table}
     </command>
     <inputs>
-        <param name="dictionary" type="data" optional="false" format="text" label="Dictionary file" help="The file with the human to mouse gene association.">
+        <param name="dictionary" type="data" optional="false" format="txt" label="Dictionary file" help="The file with the human to mouse gene association.">
           <validator type="dataset_ok_validator" />
         </param>
-        <param name="human_table" type="data" optional="false" format="text" label="Human Table" help="The file with the human sample output">
+        <param name="human_table" type="data" optional="false" format="txt" label="Human Table" help="The file with the human sample output">
           <validator type="dataset_ok_validator" />
         </param>
-        <param name="mouse_table" type="data" optional="false" format="text" label="Mouse Table" help="The file with the mouse sample output">
+        <param name="mouse_table" type="data" optional="false" format="txt" label="Mouse Table" help="The file with the mouse sample output">
           <validator type="dataset_ok_validator" />
         </param>
     </inputs>
